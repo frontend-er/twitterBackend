@@ -1,15 +1,22 @@
 import express from 'express';
-
+import { UserCtrl } from "./controllers/UserController";
+import { registorValidations } from './validations/registr';
 
 const app = express();
 
-
-app.get('/users', (_, res: express.Response) => {
-   res.send('Salut  ')
-});
+app.use(express.json())
 
 
+app.get('/users', UserCtrl.index);
+app.post('/users', registorValidations, UserCtrl.create);
+//app.patch('/users', UserCtrl.update);
+//app.delete('/users', UserCtrl.delete);
 
-app.listen(8888, (): void => {
+
+
+
+
+
+app.listen(8888, () => {
    console.log("SERVER RUNNED")
 });

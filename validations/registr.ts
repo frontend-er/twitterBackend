@@ -11,7 +11,7 @@ export const registorValidations = [
       min: 2,
       max: 40,
    }).withMessage('Допустимый минимум 2, максимум 40'),
-   body('userName', 'Введите логин').isString().isLength({
+   body('username', 'Введите логин').isString().isLength({
       min: 2,
       max: 40,
    }).withMessage('Допустимый минимум 2, максимум 40'),
